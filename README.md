@@ -30,6 +30,18 @@ _visualize work-in-progress queues_
 ## grids
 [https://github.com/galencm/grids](https://github.com/galencm/grids)
 
+![grids](grids/grids_1.gif "nested grids")
+
+animated gif showing cell panning and movement through nested grids.
+
+![grids](grids/grids_1.jpg "grid of files")
+
+```
+grids --size=900x900 chronology1798_1805.txt chronology1798_1805.txt chronology1798_1805.txt 289956main_lochart.full.2_full.jpg
+```
+
+`grids` with multiple files loaded.
+
 ## qma-ui
 [https://github.com/galencm/qma-ui](https://github.com/galencm/qma-ui)
 
