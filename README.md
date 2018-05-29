@@ -34,7 +34,7 @@ _visualize work-in-progress queues_
 
 animated gif showing cell panning and movement through nested grids.
 
-( gif created using [peek](https://github.com/phw/peek "https://github.com/phw/peek") and edited with [gifsicle](https://github.com/kohler/gifsicle "https://github.com/kohler/gifsicle") )
+( gif created using [peek](https://github.com/phw/peek "https://github.com/phw/peek") and resized with [gifsicle](https://github.com/kohler/gifsicle "https://github.com/kohler/gifsicle") )
 
 ![grids](grids/grids_1.jpg "grid of files")
 
