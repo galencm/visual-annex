@@ -24,6 +24,35 @@ _visualize work-in-progress queues_
 ## dss-ui
 [https://github.com/galencm/dss-ui](https://github.com/galencm/dss-ui)
 
+![overview](dss_ui/dss_ui_1.jpg "overview of project and metadata")
+
+set various predefined or arbitrary metadata for project. Some metadata might be used as criteria for sequencing projects using `qma-ui` and adjusting device settings.
+
+![regions](dss_ui/dss_ui_2.jpg "select regions for groups to use for ocr and classification")
+
+select regions of image to identify and process in some manner. In this case potential regions where page numbers are found. Generated xml can be used to setup ocring of regions(see _pipeling_ and _routeling_ in [machinic-lings](https://github.com/galencm/machinic-lings "https://github.com/galencm/machinic-lings")). Rules can use the results of these regions for classifying glworbs in categories. 
+
+![categories](dss_ui/dss_ui_3.jpg "categories: color, extant, start/end")
+
+salient subunits of a project, possibly with a sequence, amount and start/end. Can be used to verify ordering, missing or uncertain items. Set colors to use in a visual manner with `fold-ui`.
+
+![rules](dss_ui/dss_ui_4.jpg "rules: use ruling dsl to specify criteria for classifaction into categories")
+
+ui for ruling to create "rules" that when run store results with glworb. `lower_left_pagenum between 15 11 -> chapter "chapter_3"` would for a glworb: check the value of the `lower_left_pagenum` key and if it is between the integer range of 11 to 15 store "chapter_3" in the key `chapter`. (see _ruling_ in [machinic-lings](https://github.com/galencm/machinic-lings "https://github.com/galencm/machinic-lings"))
+
+![slurp](dss_ui/dss_ui_5.jpg "slurp material into the machinic ecosystem")
+
+ui to quickly to create glworbs from various sources for testing or minimal setup of regions/categories/rules in a decoupled manner.
+
+![output](dss_ui/dss_ui_6.jpg "output xml as file, zipped directory or directly to redis")
+
+export xml or directly to redis with the design of decoupling setup from other steps of the process. 
+
+* `qma-ui` and `fold-ui` can auto-update these setups from redis or an xml file
+
+* A slightly more advanced version of this decoupling might allow capturing setup images via webcam or a built in camera, selecting regions and then rescaling all regions for the in-process higher resolution devices.
+
+
 ## fold-lattice-ui
 [https://github.com/galencm/fold-lattice-ui](https://github.com/galencm/fold-lattice-ui)
 
