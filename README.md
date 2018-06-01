@@ -56,6 +56,62 @@ export xml or directly to redis with the design of decoupling setup from other s
 ## fold-lattice-ui
 [https://github.com/galencm/fold-lattice-ui](https://github.com/galencm/fold-lattice-ui)
 
+![hotkeys in fold_ui](fold_lattice_ui/fold_lattice_ui_1.gif "hotkeys in fold_ui")
+
+animated gif showing hotkey interaction with fold ui.
+
+Vertical columns are called _folds_, each containing the same(but arbitrary) amount of _rows_. Folds can be selected to show their contents.
+
+Each row represents a glworb and can have different colors/textures, functioning as a symbol/overview for the state of the glworb:
+* a color if a binary(image) has been found
+* a color if the glworb matches the palette of categories. Categories and colors can be easily defined in `dss-ui`.
+* a texture if the glworbs are discontinuous as defined by the categories. For example: several glworbs may be in the same category but have a value such as page_num in the order of 1, 2, 4, 5 that should be continuous and so discontinuities are textured.
+
+The goal is for `fold-ui` to be used to observe progress of the project-in-process in a high-level manner and interact as necessary at lower-levels. Examples: changing orderings, defining canonical sequencing from identical images, exporting a canonical sequence as a finished project.
+
+**Note: for these screenshots, categories were assigned in an arbitrary way. Normally category assignment is done by checking ruling rules**
+
+![fold_ui](fold_lattice_ui/fold_lattice_ui_1.jpg "fold-ui")
+
+```
+fold-ui --size=1500x800 -- --xml-file generated.xml
+```
+
+Category coloring with 5 glworbs per fold. The file `generated.xml` was created by `dss-ui`.
+
+The relevant section of xml is:
+
+```
+<category name="chapter_1" color="#1a42f9" rough_amount="5" rough_amount_start="1" rough_amount_end="6" rough_order="0.0"/>
+<category name="chapter_3" color="#5e8a2f" rough_amount="5" rough_amount_start="11" rough_amount_end="16" rough_order="2.0"/>
+<category name="chapter_2" color="#1478a9" rough_amount="5" rough_amount_start="6" rough_amount_end="11" rough_order="1.0"/>
+<category name="chapter_4" color="#f7be2d" rough_amount="4" rough_amount_start="16" rough_amount_end="20" rough_order="3.0"/>
+```
+
+![enlarging in a fold](fold_lattice_ui/fold_lattice_ui_2.jpg "enlarging in a fold")
+
+Enlarge (or shrink) within a fold
+
+![adjusting rows and columns in a fold](fold_lattice_ui/fold_lattice_ui_3.jpg "adjusting rows and columns in a fold")
+
+Adjust rows / columns within a fold
+
+![more rows per fold](fold_lattice_ui/fold_lattice_ui_4.jpg "more rows per fold")
+
+```
+fold-ui --size=1500x800 -- --xml-file generated.xml --group-amount 10
+```
+
+10 glworbs per fold. Now, using the example xml, ~2 categories can fit per fold compared to the earlier 5 glworbs per fold.
+
+![arbitrary rows and columns in fold](fold_lattice_ui/fold_lattice_ui_5.jpg "arbitrary rows and columns in fold")
+
+Arbitrary rows / columns within a fold (ranging between 1 column : n rows and n columns : 1 row )
+
+![fold-ui without categories](fold_lattice_ui/fold_lattice_ui_6.jpg "fold-ui without categories")
+
+`fold-ui` without any categories
+
 ## grids
 [https://github.com/galencm/grids](https://github.com/galencm/grids)
 
