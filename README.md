@@ -132,6 +132,34 @@ grids --size=900x900 chronology1798_1805.txt chronology1798_1805.txt chronology1
 ## qma-ui
 [https://github.com/galencm/qma-ui](https://github.com/galencm/qma-ui)
 
+**Note: qma-ui is very rough. Screenshot and description are to provide a sense of how qma_ui fits into the machinic ecosystem**
+
+![qma_ui](qma_ui/qma_ui_1.jpg "early screenshot of qma_ui showing queued projects")
+
+```
+python3 qma_ui.py --size=1500x800
+```
+
+Early screenshot showing queued projects with:
+* active project and order
+* project dimensions thumbnail
+* project outline thumbnail
+* project-state(via dss-ui) thumbnail
+* configurable action buttons to call external programs
+* conditions (using conditionling?)
+
+Projects can be reordered or sorted by metadata such as dimensions. Project at top of queue is **active** and `qma_ui` should automatically have all configuration and machinic environment prepared as needed by the project.
+
+When a project becomes **active**:
+
+* `qm_ui` could/should handle creating rules/pipes/routes for active project.
+
+* `qm_ui` should evaluate conditions (which may be in a dsl called _conditionling_) that specifies conditions and values to set. A simple example would be something like: _"if width <= 4 and height <=8 set zoom to 5"_. This would correctly configure devices in based on the project metadata/dimensions and save the user from manually configuring and reconfiguring devices for each new work-in-progress.
+
+* _conditionling_ should be easily editable in the ui
+
+* possiblity of more general project states: 'queued', 'active', 'archived', 'abandoned', 'finished' to reflect what has become of project and its material.
+
 ## vizaviz
 [https://github.com/galencm/vizaviz](https://github.com/galencm/vizaviz)
 
